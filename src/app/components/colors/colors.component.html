@@ -1,0 +1,37 @@
+<div class="container mx-auto p-4">
+    <app-toolbar />
+
+    <div class="flex justify-center items-center mt-6">
+        <div class="w-full max-w-lg p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div class="space-y-6">
+                <h5 class="text-xl font-medium text-gray-900 dark:text-white w-full text-center">Lista de Colores</h5>
+                
+                <div class="flex flex-row justify-between gap-4">
+                    <div class="flex flex-col text-center">
+                        <label for="number-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ROJO</label>
+                        <input [(ngModel)]="red" type="number" id="number-input" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                    </div>
+                    <div class="flex flex-col text-center">
+                        <label for="number-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">VERDE</label>
+                        <input [(ngModel)]="green" type="number" id="number-input" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                    </div>
+                    <div class="flex flex-col text-center">
+                        <label for="number-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">AZUL</label>
+                        <input [(ngModel)]="blue" type="number" id="number-input" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" (click)="addColor()">AGREGAR COLOR</button>
+
+                @for(color of colors(); track color) {
+                    <div class="flex flex-row gap-8 ml-6">
+                        <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" [style.background-color]="color">
+                        </div>
+                        <span class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{color}}</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
